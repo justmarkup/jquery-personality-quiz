@@ -1,0 +1,85 @@
+/* basic styles for jQuery Personality Quiz Plugin*/
+
+.juma-quiz {
+	/* the questions */
+	h3 {
+		line-height: 26px;
+		border-bottom: 1px solid #333;
+		margin: 0;
+		font-weight: normal;
+		font-size: 16px;
+		padding: 0 0 5px 5px;
+	}
+	ul {padding: 5px 0 5px 10px;}
+	li {
+		position: relative; 
+		margin-bottom: 20px; 
+		list-style: none;
+		display: none;
+	}
+	/* current wrapper for question and answers */
+	.active,
+	.active li {
+		display: block;
+	}
+	ul li {
+		cursor: pointer;
+		position: relative;
+		padding: 10px 5px;
+		margin-bottom: 0;
+		border-bottom: 1px dotted #999;
+		&:before {
+			opacity: 0;
+			content: "✓";
+			position: absolute;
+			top: 8px;
+			left: -18px;
+			color: #1E9B1A;
+			font-size: 20px;
+			line-height: 20px;
+			text-align: center;
+			background-color: #fff;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+		}
+	}
+	/* clicked answer */
+	.juma-choice {
+			color: #000;
+			font-weight: bold;
+	}
+	ul li:hover:before,
+	ul .juma-choice:before {
+		opacity: 1;
+	}
+	/* the forward button */
+	.juma-forward {
+		background-color: #ddd;
+		border-radius: 6px;
+		display: inline;
+		padding: 5px;
+	}
+	/* the progress bar */
+	.juma-progress {
+		background-color: #eee;
+		height: 10px;
+	}
+
+	.juma-progress span {
+		height: 10px;
+		background-color: #333;
+		opacity: 0.7;
+		position: absolute;
+	}
+	/* score at the end of the test */
+	.juma-score li{
+		display: none;
+		list-style: none;
+		line-height: 24px;
+		padding: 2px 10px;
+	}
+
+	/* the final score */
+	.juma-result {display: block;}
+}
