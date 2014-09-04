@@ -56,8 +56,6 @@
             progress = '.juma-progress';
             progress_bar = $(progress + '> span');
             $(progress).css('width', con_w);
-            progress_bar.css('width', con_w / $(ques).length);
-            progress_w = parseInt(progress_bar.css('width'), 10);
         },
         setActive: function (ques) {
             $('html').addClass('js');
@@ -84,6 +82,7 @@
                 points += tmp_points[cur_ques];
                 cur_ques = $(ques + '.active');
                 if (cur_ques.is(':last-child')) {
+                    $('.juma-progress > span').css('width', con_w);
                     $(con).hide();
                     forward.hide();
                     score_child = $('.juma-score li').length;
@@ -98,7 +97,9 @@
                     $(ques).removeClass('active');
                     (cur_ques).next('li').addClass('active');
                     forward.attr("disabled", "disabled");
-                    $('.juma-progress > span').css('width', progress_w * $('.active').data('question') + 'px');
+                    progress_bar.css('width', con_w / $(ques).length);
+                    progress_w = parseInt(progress_bar.css('width'), 10);
+                    $('.juma-progress > span').css('width', progress_w * ($('.active').data('question') - 1) + 'px');
                 }
             });
         }

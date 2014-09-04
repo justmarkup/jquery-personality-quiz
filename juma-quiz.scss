@@ -7,7 +7,7 @@
 		border-bottom: 1px solid #333;
 		margin: 0;
 		font-weight: normal;
-		font-size: 16px;
+		font-size: 20px;
 		padding: 0 0 5px 5px;
 	}
 	ul {padding: 5px 0 5px 10px;}
@@ -22,7 +22,7 @@
 	.active li {
 		display: block;
 	}
-	ul li {
+	ol ul li {
 		cursor: pointer;
 		position: relative;
 		padding: 10px 5px;
