@@ -6,11 +6,11 @@ jQuery personality quiz
 
 What is it?
 ------------
-A JQuery Plugin to implement a playable quiz with points and final score.
+A JQuery Plugin to implement a interactive quiz with points and final score.
 
 How to use?
 ------------
-Have a look at the example.html
+Have a look at the example.html to get an idea. If you have any question don't hesitate to contact me at hallo@justmarkup.com
 
 License
 ------------
