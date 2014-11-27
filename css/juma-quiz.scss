@@ -1,7 +1,7 @@
 /* basic styles for jQuery Personality Quiz Plugin*/
 
 .juma-quiz {
-	/* the questions */
+	// the questions
 	h3 {
 		line-height: 26px;
 		border-bottom: 1px solid #333;
@@ -17,7 +17,7 @@
 		list-style: none;
 		display: none;
 	}
-	/* current wrapper for question and answers */
+	// current wrapper for question and answers
 	.active,
 	.active li {
 		display: block;
@@ -44,7 +44,7 @@
 			border-radius: 50%;
 		}
 	}
-	/* clicked answer */
+	// clicked answer
 	.juma-choice {
 			color: #000;
 			font-weight: bold;
@@ -53,14 +53,14 @@
 	ul .juma-choice:before {
 		opacity: 1;
 	}
-	/* the forward button */
+	// the forward button
 	.juma-forward {
 		background-color: #ddd;
 		border-radius: 6px;
 		display: inline;
 		padding: 5px;
 	}
-	/* the progress bar */
+	// the progress bar
 	.juma-progress {
 		background-color: #eee;
 		height: 10px;
@@ -72,7 +72,7 @@
 		opacity: 0.7;
 		position: absolute;
 	}
-	/* score at the end of the test */
+	// score at the end of the test
 	.juma-score li{
 		display: none;
 		list-style: none;
@@ -80,6 +80,6 @@
 		padding: 2px 10px;
 	}
 
-	/* the final score */
+	// the final score
 	.juma-result {display: block;}
 }

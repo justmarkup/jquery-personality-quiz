@@ -44,7 +44,7 @@
         init: function () {
             con = '#' + this.options.container;
             ques = con + ' > li';
-            if (this.options.progress !== false) {
+            if (this.options.progress) {
                 this.addProgress();
             }
             this.setActive(ques);
