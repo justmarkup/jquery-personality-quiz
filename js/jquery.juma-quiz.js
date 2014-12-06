@@ -12,7 +12,8 @@
     var pluginName = 'jumaQuiz',
         defaults = {
             container: 'juma-quiz',
-            progress: true
+            progress: true,
+            nextAuto: false
         },
         ques,
         forward,
@@ -59,7 +60,10 @@
         },
         setActive: function (ques) {
             $('html').addClass('js');
-            $(con).after('<button class="juma-forward">Next</button>');
+            if (!this.options.nextAuto) {
+                $(con).after('<button class="juma-forward">Next</button>');
+            }
+            
             forward = $('.juma-forward');
             forward.attr("disabled", "disabled");
             if (!$(ques).hasClass('active')) {
@@ -69,39 +73,48 @@
         answer: function (con) {
             answers = $(ques + '> ul li');
             forward = $('.juma-forward');
+            var nextAuto = this.options.nextAuto;
             answers.click(function () {
                 answers.removeClass('juma-choice');
                 forward.attr("disabled", "disabled");
                 cur_ques = $(ques + '.active').data('question');
                 forward.removeAttr("disabled");
                 $(this).addClass('juma-choice');
-            });
-
-            forward.click(function () {
-                tmp_points[cur_ques] = $('.juma-choice').data('points');
-                points += tmp_points[cur_ques];
-                cur_ques = $(ques + '.active');
-                if (cur_ques.is(':last-child')) {
-                    $('.juma-progress > span').css('width', con_w);
-                    $(con).hide();
-                    forward.hide();
-                    score_child = $('.juma-score li').length;
-                    for (score_i; score_i < score_child; score_i += 1) {
-                        var a = $('.juma-score li')[score_i];
-                        if (points <= $(a).data('points')) {
-                            $(a).show();
-                            return;
-                        }
-                    }
-                } else {
-                    $(ques).removeClass('active');
-                    (cur_ques).next('li').addClass('active');
-                    forward.attr("disabled", "disabled");
-                    progress_bar.css('width', con_w / $(ques).length);
-                    progress_w = parseInt(progress_bar.css('width'), 10);
-                    $('.juma-progress > span').css('width', progress_w * ($('.active').data('question') - 1) + 'px');
+                if (nextAuto) {
+                    Plugin.prototype.nextQuestion();
                 }
+
             });
+            if (!this.options.nextAuto) {
+                forward.click(function () {
+                    Plugin.prototype.nextQuestion();
+                });
+            }
+        },
+        nextQuestion: function () {
+            tmp_points[cur_ques] = $('.juma-choice').data('points');
+            points += tmp_points[cur_ques];
+            cur_ques = $(ques + '.active');
+            if (cur_ques.is(':last-child')) {
+                $('.juma-progress > span').css('width', con_w);
+                $(con).hide();
+                forward.hide();
+                score_child = $('.juma-score li').length;
+                for (score_i; score_i < score_child; score_i += 1) {
+                    var a = $('.juma-score li')[score_i];
+                    if (points <= $(a).data('points')) {
+                        $(a).show();
+                        return;
+                    }
+                }
+            } else {
+                $(ques).removeClass('active');
+                (cur_ques).next('li').addClass('active');
+                forward.attr("disabled", "disabled");
+                progress_bar.css('width', con_w / $(ques).length);
+                progress_w = parseInt(progress_bar.css('width'), 10);
+                $('.juma-progress > span').css('width', progress_w * ($('.active').data('question') - 1) + 'px');
+            }
         }
     };
 
