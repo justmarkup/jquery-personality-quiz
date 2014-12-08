@@ -12,6 +12,14 @@ How to use?
 ------------
 Have a look at the example.html to get an idea. If you have any question don't hesitate to contact me at hallo@justmarkup.com
 
+Options
+------------
+```
+container: 'juma-quiz', // className of the ol surrounding the questions, default is 'juma-quiz'
+progress: true, // show progress bar, default is true
+nextAuto: false // show next question automatically after clicking an answer, default is false
+```
+
 License
 ------------
 
