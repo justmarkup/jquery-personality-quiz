@@ -14,7 +14,8 @@
         defaults = {
             container: 'juma-quiz',
             progress: true,
-            nextAuto: false
+            nextAuto: false,
+            showFinalScore: false
         },
         ques,
         forward,
@@ -99,6 +100,9 @@
                 var a = $('.juma-score li')[score_i];
                 if (points <= $(a).data('points')) {
                     $(a).show();
+                    if (option.showFinalScore) {
+                       $(a).children('h3').append(' (' + points + ' points)'); 
+                    }
                     return;
                 }
             }
