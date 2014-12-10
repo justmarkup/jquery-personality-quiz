@@ -10,7 +10,7 @@ A JQuery Plugin to implement a interactive quiz with points and final score.
 
 How to use?
 ------------
-Have a look at the example.html to get an idea. If you have any question don't hesitate to contact me at hallo@justmarkup.com
+Have a look at the example files in /examples to get an idea. If you have any question don't hesitate to contact me at hallo@justmarkup.com
 
 Options
 ------------
