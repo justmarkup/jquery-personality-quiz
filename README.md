@@ -2,7 +2,7 @@ jQuery personality quiz
 ================================
 
 * Author    : justmarkup hallo@justmarkup.com
-* Demo      : http://justmarkup.com/jquery-personality-quiz/example.html
+* Demo      : https://michael.justmarkup.com/jquery-personality-quiz/example.html
 
 What is it?
 ------------
