@@ -18,7 +18,7 @@ Options
 container: 'juma-quiz', // className of the ol surrounding the questions, default is 'juma-quiz'
 progress: true, // show progress bar, default is true
 nextAuto: false // show next question automatically after clicking an answer, default is false
-showFinalScore: false // show final score at the end, default is false
+showFinalScore: false // show final score within html element with className .juma-final-score, default is false
 ```
 
 License
