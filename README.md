@@ -15,10 +15,10 @@ Have a look at the example files in /examples to get an idea. If you have any qu
 Options
 ------------
 ```
-container: 'juma-quiz', // className of the ol surrounding the questions, default is 'juma-quiz'
+container: 'juma-quiz', // className of the container surrounding the questions, default is 'juma-quiz'
 progress: true, // show progress bar, default is true
-nextAuto: false // show next question automatically after clicking an answer, default is false
-showFinalScore: false // show final score within html element with className .juma-final-score, default is false
+nextAuto: false // show next question automatically after choosing an answer, default is false
+showFinalScore: false // show final score within html element with className .juma-final-score, eg. <span class="juma-final-score"></span>, default is false
 ```
 
 License
