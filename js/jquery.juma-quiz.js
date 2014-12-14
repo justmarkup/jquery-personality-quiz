@@ -69,12 +69,14 @@
     function answer (con) {
         answers = $(ques + '> ul li');
         forward = $('.juma-forward');
-        answers.click(function () {
+        answers.on('click focus', function () {
             answers.removeClass('juma-choice');
+            answers.attr('aria-checked', false);
             forward.attr("disabled", "disabled");
             cur_ques = $(ques + '.active').data('question');
             forward.removeAttr("disabled");
             $(this).addClass('juma-choice');
+            $(this).attr('aria-checked', true);
             if (option.nextAuto) {
                 nextQuestion();
             }
