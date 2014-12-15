@@ -56,7 +56,7 @@
     function setActive (ques) {
         $('html').addClass('js');
         if (!option.nextAuto) {
-            $(con).after('<button class="juma-forward">Next</button>');
+            $(con).after('<button type="submit" title="Show next question" class="juma-forward">Next</button>');
         }
         
         forward = $('.juma-forward');
@@ -69,16 +69,20 @@
     function answer (con) {
         answers = $(ques + '> ul li');
         forward = $('.juma-forward');
-        answers.on('click focus', function () {
-            answers.removeClass('juma-choice');
-            answers.attr('aria-checked', false);
-            forward.attr("disabled", "disabled");
-            cur_ques = $(ques + '.active').data('question');
-            forward.removeAttr("disabled");
-            $(this).addClass('juma-choice');
-            $(this).attr('aria-checked', true);
-            if (option.nextAuto) {
-                nextQuestion();
+        answers.on('click keydown', function (ev) {
+            if (ev.which == 1 | ev.which == 13) {
+                answers.removeClass('juma-choice');
+                answers.attr('aria-checked', false);
+                forward.attr("disabled", "disabled");
+                cur_ques = $(ques + '.active').data('question');
+                forward.removeAttr("disabled");
+                $(this).addClass('juma-choice');
+                $(this).attr('aria-checked', true);
+                if (option.nextAuto) {
+                    nextQuestion();
+                }
+            } else {
+                
             }
 
         });
