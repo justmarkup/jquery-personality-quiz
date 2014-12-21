@@ -1,13 +1,14 @@
-/*global document, jQuery, window*/
+/*global jQuery*/
 
 /*!
  * jQuery Personality Quiz Plugin
- * Original author: @justmarkup
+ * Original author: Michael Scharnagl @justmarkup
+ * Version 0.2.0
  * Licensed under the MIT license
  */
 
 
-(function ($, window, document) {
+(function ($) {
     "use strict";
     var pluginName = 'jumaQuiz',
         option,
@@ -23,7 +24,6 @@
         cur_ques,
         tmp_points = [],
         points = 0,
-        score,
         score_child,
         score_i = 0,
         progress,
@@ -66,11 +66,11 @@
         }
     }
 
-    function answer (con) {
+    function answer () {
         answers = $(ques + '> ul li');
         forward = $('.juma-forward');
         answers.on('click keydown', function (ev) {
-            if (ev.which == 1 | ev.which == 13) {
+            if (ev.which == 1 || ev.which == 13) {
                 answers.removeClass('juma-choice');
                 answers.attr('aria-checked', false);
                 forward.attr("disabled", "disabled");
@@ -116,21 +116,23 @@
             $(ques).removeClass('active');
             (cur_ques).next('li').addClass('active');
             forward.attr("disabled", "disabled");
-            progress_bar.css('width', con_w / $(ques).length);
-            progress_w = parseInt(progress_bar.css('width'), 10);
-            $('.juma-progress > span').css('width', progress_w * ($('.active').data('question') - 1) + 'px');
+            if (option.progress) {
+                progress_bar.css('width', con_w / $(ques).length);
+                progress_w = parseInt(progress_bar.css('width'), 10);
+                $('.juma-progress > span').css('width', progress_w * ($('.active').data('question') - 1) + 'px');
+            }
         }
     }
 
     Plugin.prototype = {
         init: function () {
-            con = '#' + this.options.container;
+            con = '#' + option.container;
             ques = con + ' > li';
-            if (this.options.progress) {
+            if (option.progress) {
                 addProgress();
             }
             setActive(ques);
-            answer(con);
+            answer();
         }
     };
 
@@ -143,4 +145,4 @@
         });
     };
 
-}(jQuery, window, document));
+}(jQuery));
