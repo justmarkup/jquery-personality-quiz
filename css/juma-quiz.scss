@@ -28,6 +28,11 @@
 		padding: 10px 5px;
 		margin-bottom: 0;
 		border-bottom: 1px dotted #999;
+		&:focus,
+		&:focus:before {
+			background: #eee;
+			outline: none;
+		}
 		&:before {
 			opacity: 0;
 			content: "✓";

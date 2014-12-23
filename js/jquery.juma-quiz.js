@@ -74,7 +74,7 @@
                 answers.removeClass('juma-choice');
                 answers.attr('aria-checked', false);
                 forward.attr("disabled", "disabled");
-                cur_ques = $(ques + '.active').data('question');
+                cur_ques = $(ques).index($( ".active" )) + 1;
                 forward.removeAttr("disabled");
                 $(this).addClass('juma-choice');
                 $(this).attr('aria-checked', true);
@@ -119,7 +119,7 @@
             if (option.progress) {
                 progress_bar.css('width', con_w / $(ques).length);
                 progress_w = parseInt(progress_bar.css('width'), 10);
-                $('.juma-progress > span').css('width', progress_w * ($('.active').data('question') - 1) + 'px');
+                $('.juma-progress > span').css('width', progress_w * ($(ques).index($( ".active" ))) + 'px');
             }
         }
     }
