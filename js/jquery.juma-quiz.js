@@ -54,7 +54,6 @@
     }
 
     function setActive (ques) {
-        $('html').addClass('js');
         if (!option.nextAuto) {
             $(con).after('<button type="submit" title="Show next question" class="juma-forward">Next</button>');
         }
@@ -68,7 +67,6 @@
 
     function answer () {
         answers = $(ques + '> ul li');
-        forward = $('.juma-forward');
         answers.on('click keydown', function (ev) {
             if (ev.which == 1 || ev.which == 13) {
                 answers.removeClass('juma-choice');
@@ -98,7 +96,7 @@
         points += tmp_points[cur_ques];
         cur_ques = $(ques + '.active');
         if (cur_ques.is(':last-child')) {
-            $('.juma-progress > span').css('width', con_w);
+            $(progress + ' > span').css('width', con_w);
             $(con).hide();
             forward.hide();
             score_child = $('.juma-score li').length;
@@ -119,7 +117,7 @@
             if (option.progress) {
                 progress_bar.css('width', con_w / $(ques).length);
                 progress_w = parseInt(progress_bar.css('width'), 10);
-                $('.juma-progress > span').css('width', progress_w * ($(ques).index($( ".active" ))) + 'px');
+                $(progress + ' > span').css('width', progress_w * ($(ques).index($( ".active" ))) + 'px');
             }
         }
     }
