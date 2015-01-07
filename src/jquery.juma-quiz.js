@@ -7,7 +7,6 @@
  * Licensed under the MIT license
  */
 
-
 (function ($) {
     "use strict";
     var pluginName = 'jumaQuiz',

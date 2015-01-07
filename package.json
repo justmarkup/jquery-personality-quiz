@@ -1,0 +1,14 @@
+{
+  "name": "jquery-personality-quiz",
+  "version": "0.1.0",
+  "description": "jquery-personality-quiz",
+  "author": "Michael Scharnagl @justmarkup",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "matchdep": "*"
+  }
+}
