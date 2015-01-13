@@ -8,6 +8,12 @@ What is it?
 ------------
 A JQuery Plugin to implement a interactive quiz with points and final score.
 
+Install via bower
+------------
+```
+bower install jquery-personality-quiz
+```
+
 How to use?
 ------------
 Have a look at the example files in /examples to get an idea. If you have any question don't hesitate to contact me at hallo@justmarkup.com
