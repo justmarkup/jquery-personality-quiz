@@ -1,0 +1,15 @@
+{
+  "name": "jquery-personality-quiz",
+  "version": "0.1.0",
+  "authors": [
+    "Michael Scharnagl @justmarkup"
+  ],
+  "description": "A jquery plugin for building a quiz",
+  "main": "dist/jquery.juma-quiz-min.js",
+  "keywords": [
+    "simple",
+    "quiz"
+  ],
+  "license": "MIT",
+  "homepage": "https://justmarkup.com"
+}

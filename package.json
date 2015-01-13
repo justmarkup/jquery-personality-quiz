@@ -1,7 +1,7 @@
 {
   "name": "jquery-personality-quiz",
   "version": "0.1.0",
-  "description": "jquery-personality-quiz",
+  "description": "A jquery plugin for building a quiz",
   "author": "Michael Scharnagl @justmarkup",
   "private": true,
   "devDependencies": {
